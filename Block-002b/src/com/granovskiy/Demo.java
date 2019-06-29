@@ -43,6 +43,6 @@ public class Demo {
         System.out.print("This is copy3 (the 3-d way of copying): ");
         int[] copy3 = Arrays.copyOf(arr, arr.length);
         System.out.print(Arrays.toString(copy2));
-        
+
     }
 }
