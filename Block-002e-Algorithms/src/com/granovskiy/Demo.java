@@ -12,7 +12,9 @@ public class Demo {
         System.out.println(max);
         // O(1) - constant
         // O(n) - linear complexity of Algorithm
-        //         logarithmic complexity - binary search
+        // O(logn) - logarithmic complexity - binary search
+        // O(nlogn) - merge sort (n going through an array when merging; logn - sorting)
+        // O(n^2) - considered to bad complexity of algorithms
 
         int arr[] = {1, 3, 4, 5, 6, 8};
         int result = doBinarySearch(arr, 3);
