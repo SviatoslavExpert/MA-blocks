@@ -10,6 +10,8 @@ public class Demo {
         overloaded6(3);
         overloaded7(3);
         overloaded8(3);
+        overloaded9("some string",3,5,7);
+        overloaded10(3);
     }
     /*
     private static void overloaded(int number) {
@@ -70,6 +72,20 @@ public class Demo {
 
     private static void overloaded8(Long number) {
         System.out.println("Long (wrapper).");
+    }
+
+    //  Vararg cannot be at the beginning of arguments, vararg shoud be at the end!
+    private static void overloaded9(String s, int ... number) {
+        System.out.println("Vararg cannot be at the beginning of arguments, vararg shoud be at the end!");
+    }
+
+    //  overloaded10
+    private static void overloaded10(int ... number) {
+        System.out.println("Vararg");
+    }
+
+    private static void overloaded10(Integer number) {
+        System.out.println("Integer (wrapper) is here because Integer (wrapper) is closer to int than vararg (object).");
     }
 
 
