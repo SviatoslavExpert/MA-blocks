@@ -4,26 +4,26 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class ReflectionApi {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException{
         Square square = new Square(10);
         Class clazz = square.getClass();
 
         Method[] methods = clazz.getMethods();
         Field[] fields = clazz.getDeclaredFields();
 
+        /*
         for (Method m : methods) {
             System.out.println(m.getName());
         }
+        */
 
         System.out.println("---------------");
 
-        for (Field f : fields) {
-            System.out.println(f.getName());
-        }
 
         //  Tips for doing the homework
         for (Field f : fields) {
-            System.out.println("{\n" + "\t" + "\"" + f.getName() + "\"" + " : " + "null" + "\n" + "}");
+            f.setAccessible(true);
+            System.out.printf("{\n" + "\t" + "\"" + "%s" + "\"" + " : " + "%d" + "\n" + "}", f.getName(), f.get(square));
         }
 
 
@@ -42,5 +42,9 @@ class Square {
 
     public int getSide() {
         return side;
+    }
+
+    public String toJson() {
+        return "";
     }
 }
