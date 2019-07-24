@@ -7,6 +7,8 @@ public class Demo {
     }
 }
 
+// implementation of interface Runnable is passed to Thread Class constructor
+
 /*
         3. An instance of MyClass is passed to a Thread
         4. A new thread is created: Thread thread = new Thread()
